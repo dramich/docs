@@ -51,17 +51,34 @@ This section describes the CPU, memory, and disk requirements for the nodes wher
 Hardware requirements scale based on the size of your Rancher deployment. Provision each individual node according to the requirements. The requirements are different depending on if you are installing Rancher with Docker or on a Kubernetes cluster.
 
 {{% tabs %}}
-{{% tab "Nodes in Kubernetes Install" %}}
+{{% tab "Nodes in RKE Install" %}}
 
-These requirements apply to [installing Rancher on a Kubernetes cluster.]({{<baseurl>}}/rancher/v2.x/en/installation/k8s-install/)
+These requirements apply to [installing Rancher on a RKE Kubernetes cluster.]({{<baseurl>}}/rancher/v2.x/en/installation/k8s-install/)
 
-| Deployment Size | Clusters  | Nodes      | vCPUs                                           | RAM                                             |
-| --------------- | --------- | ---------- | ----------------------------------------------- | ----------------------------------------------- |
-| Small           | Up to 5   | Up to 50   | 2                                               | 8 GB                                            |
-| Medium          | Up to 15  | Up to 200  | 4                                               | 16 GB                                           |
-| Large           | Up to 50  | Up to 500  | 8                                               | 32 GB                                           |
-| X-Large         | Up to 100 | Up to 1000 | 32                                              | 128 GB                                          |
-| XX-Large        | 100+      | 1000+      | [Contact Rancher](https://rancher.com/contact/) | [Contact Rancher](https://rancher.com/contact/) |
+| Deployment Size | Clusters  | Nodes      | vCPUs  | RAM    |
+| --------------- | --------- | ---------- | -------| ------- |
+| Small           | Up to 150  | Up to 1500   | 2      | 8 GB   |
+| Medium          | Up to 300  | Up to 3000 | 4      | 16 GB  |
+| Large           | Up to 500  | Up to 5000  | 8      | 32 GB  |
+| X-Large         | Up to 1000 | Up to 10000 | 16     | 64 GB  |
+| XX-Large        | Up to 2000 | Up to 20000  | 32     | 128GB |
+
+[Contact Rancher](https://rancher.com/contact/) for more than 2000 clusters and/or 20000 nodes. 
+
+{{% /tab %}}
+{{% tab "Nodes in K3s Install" %}}
+
+These requirements apply to [installing Rancher on a K3s Kubernetes cluster.]({{<baseurl>}}/rancher/v2.x/en/installation/k8s-install/)
+
+| Deployment Size | Clusters   | Nodes        | vCPUs  | RAM      | Database Size |
+| --------------- | ---------- | ------------ | -------| ---------| ------------ |
+| Small           | Up to 150  | Up to 1500     | 2      | 8 GB     | 2c 4GB + 1000 IOPS |
+| Medium          | Up to 300  | Up to 3000    | 4      | 16 GB    | 2c 4GB + 1000 IOPS |
+| Large           | Up to 500  | Up to 5000    | 8      | 32 GB    | 2c 4GB + 1000 IOPS |
+| X-Large         | Up to 1000 | Up to 10000   | 16     | 64 GB    | 2c 4GB + 1000 IOPS |
+| XX-Large        | Up to 2000 | Up to 20000  | 32     | 128GB    | 2c 4GB + 1000 IOPS |
+
+[Contact Rancher](https://rancher.com/contact/) for more than 2000 clusters and/or 20000 nodes. 
 
 {{% /tab %}}
 {{% tab "Node in Docker Install" %}}
